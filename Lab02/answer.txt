@@ -1,0 +1,9 @@
+1. What happens if the user chooses "Cancel"?
+-The returned string is No, as the current code is using the default option type, Yes/No/Cancel
+
+2. How would you customize the options given to the customer?
+-If I were to use Yes and No as the two options, I'd use JOptionPane.YES_NO_OPTION
+-On the other hand, I could use showOptionDialog() in order to make custom options, this case: "I do" & "I don't"
+
+
+
