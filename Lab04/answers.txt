@@ -1,0 +1,27 @@
+Lab04 Answers
+
+Question 5: Constructors
+
+**Why can't we define both `DigitalVideoDisc(String title)` and `DigitalVideoDisc(String category)`?**
+
+Java identifies overloaded constructors by their parameter types, number of parameters, and order. Both constructors have exactly the same signature: one `String` parameter. The parameter names (`title` and `category`) do not affect the signature, so Java does not allow both constructors in the same class.
+
+Question 9: Method Overloading
+
+**What is the difference between using an array and using varargs?**
+
+An array parameter requires the caller to pass an array of `DigitalVideoDisc` objects. A varargs parameter (`DigitalVideoDisc... dvdList`) allows the caller to pass multiple individual DVD objects or an existing array.
+
+Varargs makes the method more convenient to call. In Java, varargs is implemented as an array parameter, so we cannot declare both `addDigitalVideoDisc(DigitalVideoDisc[])` and `addDigitalVideoDisc(DigitalVideoDisc...)` in the same class because they have the same method signature.
+
+Question 10: Passing Parameters
+
+**Why does swapping two DVD references inside the `swap()` method not change the original references?**
+
+Java uses pass-by-value. When `swap()` is called, the values of the two object references are copied into the method parameters. Swapping these local copies does not change the original variables in `main()`.
+
+**Why does calling `changeTitle()` change the title of the original DVD?**
+
+The method receives a copy of the reference to the same DVD object. Although the reference itself is passed by value, both the original variable and the parameter refer to the same object. Therefore, modifying the object's title through a setter changes the title observed through the original reference.
+
+**Conclusion:** Java always uses pass-by-value. For objects, the value being copied is the object reference.
